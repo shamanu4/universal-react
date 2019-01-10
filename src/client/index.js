@@ -1,48 +1,32 @@
-import { render } from 'react-dom';
-import React, { Component } from 'react';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import createPalette from 'material-ui/styles/palette';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { loadComponents } from 'loadable-components';
+import { render } from "react-dom";
+import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { loadComponents } from "loadable-components";
 
-import App from '../shared/app';
-
-const createStyleManager = () => MuiThemeProvider.createDefaultContext({
-    theme: createMuiTheme({
-        palette: createPalette({
-            // primary: green,
-            // accent: red,
-            type: 'light',
-        }),
-    }),
-});
+import App from "../shared/app";
 
 class Main extends Component {
-    // Remove the server-side injected CSS.
-    componentDidMount() {
-        const jssStyles = document.getElementById('jss-server-side');
-        if (jssStyles && jssStyles.parentNode) {
-            jssStyles.parentNode.removeChild(jssStyles);
-        }
+  // Remove the server-side injected CSS.
+  componentDidMount() {
+    const jssStyles = document.getElementById("jss-server-side");
+    if (jssStyles && jssStyles.parentNode) {
+      jssStyles.parentNode.removeChild(jssStyles);
     }
+  }
 
-    render() {
-        return (
-            <Router>
-                <App {...this.props} />
-            </Router>
-        );
-    }
+  render() {
+    return (
+      <Router>
+        <App {...this.props} />
+      </Router>
+    );
+  }
 }
 
-// Create a styleManager instance.
-const { styleManager, theme } = createStyleManager();
-
-loadComponents().then(() => {
-    render(
-        <MuiThemeProvider styleManager={styleManager} theme={theme}>
-            <Main />
-        </MuiThemeProvider>,
-        document.getElementById('root'),
-    );
-});
+loadComponents()
+  .then(() => {
+    render(<Main />, document.getElementById("root"));
+  })
+  .catch(e => {
+    console.error(e);
+  });
