@@ -1,0 +1,39 @@
+{
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  "editor.renderIndentGuides": true,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.matchBrackets": true,
+  "editor.wordWrap": "on",
+  "files.trimTrailingWhitespace": false,
+  "files.insertFinalNewline": true,
+  "workbench.iconTheme": "vscode-icons",
+  "window.zoomLevel": 0,
+  "extensions.ignoreRecommendations": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "breadcrumbs.enabled": true,
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[sass]": {
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.tabSize": 4
+  },
+  "editor.renderControlCharacters": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.labelFormat": "short",
+  "files.associations": {
+    ".babelrc": "json"
+  },
+  "javascript.implicitProjectConfig.experimentalDecorators": true
+}
